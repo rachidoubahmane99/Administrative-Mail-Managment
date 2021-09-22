@@ -25,9 +25,10 @@ class AdminController extends Controller
         return view ('Admins.create');
         
     }
-
-    // cette fonction permet d'ajouter nouvelle administrateur
     public function enregistrer(Request $request){
+        
+        
+    
         
             $email = $request->Email;
             $password = $request->password;
@@ -44,7 +45,7 @@ class AdminController extends Controller
            'isAdmin' => true
            
            ]); 
-           session()->flush('success','un compte Admin a eté créer avec success');
+           session()->flush('success','admin  creer avec success');
             }else{
                
             }
@@ -65,7 +66,6 @@ class AdminController extends Controller
         return view('Admins.edit', compact('admin'));
     }
 
-    // la fonction qui permet de de modifier le compte d'un admine telque son email et le mot de pass
     public function update($id, Request $Request){
 
         if (empty($Request['Email']) && empty($Request['password']) ) {

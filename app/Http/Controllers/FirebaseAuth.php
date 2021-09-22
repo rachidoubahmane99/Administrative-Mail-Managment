@@ -86,7 +86,7 @@ class FirebaseAuth extends Controller
         $docRef = $this->db->collection('Departments');
         $snapshot = $docRef->documents();
         $departement = $snapshot;   
-        
+     
         return view('auth.register', compact('departement'));
     }
 
